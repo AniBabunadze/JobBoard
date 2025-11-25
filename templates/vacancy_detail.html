@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}{{ v.title }}{% endblock %}
+{% block content %}
+<h2>{{ v.title }}</h2>
+<p class="text-muted">Company: {{ v.company }} — Location: {{ v.location }} — Category: <span class="badge bg-info">{{ v.category }}</span></p>
+<p><strong>Salary:</strong> {{ v.salary or '—' }}</p>
+<hr>
+<div>
+  {{ v.full_description | nl2br }}
+</div>
+
+<p class="mt-3"><small>Posted by <a href="{{ url_for('public_profile', user_id=v.author.id) }}">{{ v.author.username }}</a> on {{ v.created_at.strftime('%Y-%m-%d') }}</small></p>
+
+{% if current_user.is_authenticated and current_user.id == v.author_id %}
+  <a class="btn btn-secondary" href="{{ url_for('edit_vacancy', vacancy_id=v.id) }}">Edit</a>
+  <form action="{{ url_for('delete_vacancy', vacancy_id=v.id) }}" method="post" style="display:inline;">
+    <button class="btn btn-danger" onclick="return confirm('Delete?')">Delete</button>
+  </form>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}External Jobs{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">External Jobs</h1>
+
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+  {% for job in jobs %}
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{ job.title }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ job.company_name }}</h6>
+          <p class="card-text mb-2"><strong>Location:</strong> {{ job.candidate_required_location }}</p>
+          <p class="card-text mb-2"><strong>Type:</strong> {{ job.job_type }}</p>
+          {% if job.description %}
+            <p class="card-text mb-2">{{ job.description[:150]|safe }}{% if job.description|length > 150 %}...{% endif %}</p>
+          {% endif %}
+          <a href="{{ job.url }}" target="_blank" class="btn btn-primary mt-auto">Apply</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% if jobs|length == 0 %}
+  <p class="text-muted">No external jobs found.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Home - JobBoard{% endblock %}
+{% block content %}
+<h1>Welcome</h1>
+<p>Latest vacancies:</p>
+<div class="row">
+  {% for v in latest %}
+  <div class="col-md-4 mb-3">
+    <div class="card h-100">
+      <div class="card-body">
+        <h5 class="card-title">{{ v.title }}</h5>
+        <p class="card-subtitle text-muted">by <a href="{{ url_for('public_profile', user_id=v.author.id) }}">{{ v.author.username }}</a> — {{ v.created_at.strftime('%Y-%m-%d') }}</p>
+        <p class="card-text mt-2">{{ v.short_description }}</p>
+        <a href="{{ url_for('vacancy_detail', vacancy_id=v.id) }}" class="btn btn-primary">Read More</a>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">{{ v.category }}</small>
+      </div>
+    </div>
+  </div>
+  {% else %}
+    <div class="alert alert-info">No vacancies yet.</div>
+  {% endfor %}
+</div>
+{% endblock %}

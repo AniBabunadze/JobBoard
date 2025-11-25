@@ -1,0 +1,21 @@
+2025-11-25 12:38:02,733 - INFO - New user registered: an@mail.com
+2025-11-25 12:38:16,779 - INFO - User an@mail.com logged in successfully
+2025-11-25 12:45:49,933 - INFO - New user registered: an@mail.com
+2025-11-25 12:46:01,459 - WARNING - 404 error at path: /static/uploads/default.jpg
+2025-11-25 14:12:45,600 - INFO - User an@mail.com logged out
+2025-11-25 14:12:55,582 - INFO - User an@mail.com logged in successfully
+2025-11-25 15:28:12,558 - WARNING - 404 error at path: /static/uploads/default.jpg
+2025-11-25 15:43:31,265 - INFO - User test@example.com logged in successfully
+2025-11-25 15:46:16,761 - INFO - User test@example.com logged in successfully
+2025-11-25 15:46:17,092 - INFO - User u2@example.com logged in successfully
+2025-11-25 15:46:17,095 - WARNING - User u2@example.com tried to edit vacancy 1 without permission
+2025-11-25 15:46:17,096 - WARNING - User u2@example.com tried to delete vacancy 1 without permission
+2025-11-25 15:52:59,605 - INFO - User test@example.com logged in successfully
+2025-11-25 15:52:59,929 - INFO - User u2@example.com logged in successfully
+2025-11-25 15:52:59,932 - WARNING - User u2@example.com tried to edit vacancy 1 without permission
+2025-11-25 15:52:59,932 - WARNING - User u2@example.com tried to delete vacancy 1 without permission
+2025-11-25 15:58:16,013 - INFO - User test@example.com logged in successfully
+2025-11-25 15:58:16,192 - WARNING - Failed login attempt for test@example.com
+2025-11-25 15:58:16,450 - INFO - User test@example.com logged in successfully
+2025-11-25 15:58:16,457 - WARNING - User test@example.com tried to edit vacancy 1 without permission
+2025-11-25 15:58:16,458 - WARNING - User test@example.com tried to delete vacancy 1 without permission
